@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "contacts": [
+    {
+      "firstName": "Ramchandra",
+      "lastName": "Patil",
+      "email": "ram@gmail.com",
+      "phone": "9876543210",
+      "status": "Inactive",
+      "addressDetails": {
+        "address": "Mumbai",
+        "city": "Kalyan",
+        "state": "MH",
+        "zipCode": "987654"
+      },
+      "id": 4
+    },
+    {
+      "firstName": "Nilesh",
+      "lastName": "Rathod",
+      "email": "nil@gmail.com",
+      "status": "Active",
+      "phone": "9834543210",
+      "addressDetails": {
+        "address": "Nashik",
+        "city": "Nashik",
+        "state": "MH",
+        "zipCode": "123456"
+      },
+      "id": 5
+    }
+  ]
+}

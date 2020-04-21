@@ -1,0 +1,108 @@
+<div class="outer container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-8 mb-2 text-right">
+      <a routerLink="/dashboard"> Back to Dashboard</a>
+    </div>
+  </div>
+  <div class="row justify-content-center mb-4">
+    <div class="col-8 bg-success">
+      <h1 class="text-white text-center">Contact Details Form</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <div class="outer1 border border-light shadow p-3 mb-5 bg-white rounded p-5">
+        <form action="" [formGroup]="reactiveForm">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" formControlName="firstName" [ngClass]="{'form-control':true, 
+              'is-invalid': !firstName.valid && firstName.touched,
+              'is-valid': firstName.valid }" placeholder="Sam">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="lastName">Last Name</label>
+              <input type="lastName" id="lastName" formControlName="lastName" [ngClass]="{'form-control':true, 
+              'is-invalid': !lastName.valid && lastName.touched,
+              'is-valid': lastName.valid}" placeholder="Patil">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email" [ngClass]="{'form-control':true, 
+            'is-invalid': !email.valid && email.touched,
+            'is-valid': email.valid}" placeholder="sam@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Contact Number</label>
+            <input type="tel" id="phone" formControlName="phone" [ngClass]="{'form-control':true, 
+            'is-invalid': !phone.valid && phone.touched,
+            'is-valid': phone.valid}" placeholder="xx-xxxx-xxxx">
+          </div>
+          <div class="form-group">
+            <label class="" for="">Status :</label>
+            <div class="form-check mx-3">
+              <input type="radio" id="active" value="Active" formControlName="status" [ngClass]="{'form-check-input':true, 
+              'is-invalid': !status.valid && status.touched,
+              'is-valid': status.valid}">
+              <label class="form-check-label" for="active">
+                Active
+              </label>
+            </div>
+            <div class="form-check mx-3">
+              <input type="radio" id="inactive" value="Inactive" formControlName="status" [ngClass]="{'form-check-input':true, 
+              'is-invalid': !status.valid && status.touched,
+              'is-valid': status.valid}">
+              <label class="form-check-label" for="inactive">
+                Inactive
+              </label>
+            </div>
+          </div>
+          <hr>
+          <div class="row" formGroupName="addressDetails">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" formControlName="address" [ngClass]="{'form-control':true, 
+                'is-invalid': !address.valid && address.touched,
+                'is-valid': address.valid}" placeholder="A-505, Alpine Auara, Moshi, Pune">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="city">City</label>
+                  <input type="text" id="city" formControlName="city" [ngClass]="{'form-control':true, 
+                  'is-invalid': !city.valid && city.touched,
+                  'is-valid': city.valid}">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="state">State</label>
+                  <select id="state" formControlName="state" [ngClass]="{'form-control':true, 
+                  'is-invalid': !state.valid && state.touched,
+                  'is-valid': state.valid}">
+                    <option selected [ngValue]="null">Choose...</option>
+                    <option>DL</option>
+                    <option>MH</option>
+                    <option>AP</option>
+                    <option>RJ</option>
+                    <option>UP</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="zipcode">Zip</label>
+                  <input type="text" id="zipCode" formControlName="zipCode" [ngClass]="{'form-control':true, 
+                  'is-invalid': !zipCode.valid && zipCode.touched,
+                  'is-valid': zipCode.valid}">
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="text-center m-4">
+            <button type="submit" class="btn btn-success" (click)="submitHanddeler()"
+              [disabled]="!reactiveForm.valid">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

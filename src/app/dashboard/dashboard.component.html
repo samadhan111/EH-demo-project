@@ -1,0 +1,55 @@
+<div class="outer container-fluid">
+
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="outer2 border border-light shadow p-3 mb-5 bg-white rounded p-2 text-center">
+        <h2 class="text-center">Contact Details</h2>
+        <hr>
+        <div *ngIf="isLoading" class="spinner">
+          <img src="../../assets/spinner.gif" alt="Looding......">
+          <h2 class="text-center">Loading......</h2>
+        </div>
+        <div *ngIf="!isLoading" class="text-right my-3">
+          <button class="btn btn-success" [routerLink]="['/dashboard','contactForm']">Add New Contact</button>
+        </div>
+        <div class="table-responsive">
+          <table *ngIf="!isLoading" class="table table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th>#ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Contact Number</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>ZipCode</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let emp of employeeDetails'>
+                <td>{{emp.id}}</td>
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.phone}}</td>
+                <td>{{emp.addressDetails.address}}</td>
+                <td>{{emp.addressDetails.city}}</td>
+                <td>{{emp.addressDetails.state}}</td>
+                <td>{{emp.addressDetails.zipCode}}</td>
+                <td>{{emp.status}}</td>
+                <td><button class="btn btn-warning" (click)="updateEmployee(emp.id)">Edit</button></td>
+                <td><button class="btn btn-danger" (click)="removeEmployee(emp.id)">Remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

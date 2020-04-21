@@ -1,0 +1,15 @@
+.outer {
+  border: 1px solid #d3d2d2;
+  background: rgb(243, 240, 240);
+  padding: 30px;
+  margin-top: 10px;
+  min-height: 760px;
+}
+
+.form-text {
+  color: red
+}
+
+.spinner img {
+  height: 200px;
+}

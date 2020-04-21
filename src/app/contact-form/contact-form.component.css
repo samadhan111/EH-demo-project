@@ -1,0 +1,21 @@
+.outer {
+  border: 1px solid #d3d2d2;
+  background: rgb(243, 240, 240);
+  padding: 10px 30px;
+  margin-top: 10px;
+}
+
+.form-text {
+  color: red
+}
+
+.contact {
+  background-color: #5151e6;
+  text-align: center;
+}
+
+.contact div p {
+  font-size: 60px;
+  color: white;
+  line-height: 650px;
+}
