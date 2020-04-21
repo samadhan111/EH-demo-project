@@ -18,26 +18,26 @@ export class FetchDataService {
     });
   }
   getAllContactDetails(): Observable<any> {
-    return this.http.get("http://localhost:3000/contacts");
+    return this.http.get("https://my-json-server.typicode.com/samadhan111/EH-demo-project/contacts");
   }
   getContactDetailsById(id: number): Observable<any> {
-    return this.http.get("http://localhost:3000/contacts/" + id);
+    return this.http.get("https://my-json-server.typicode.com/samadhan111/EH-demo-project/contacts/" + id);
   }
   createContact(newUser): Observable<any> {
     let httpHeaders = new HttpHeaders().set("Content-Type", "application/json");
     let options = { headers: httpHeaders };
-    return this.http.post("http://localhost:3000/contacts", newUser, options);
+    return this.http.post("https://my-json-server.typicode.com/samadhan111/EH-demo-project/contacts", newUser, options);
   }
   updateContact(id: number, updatedUserDetails): Observable<any> {
     let httpHeaders = new HttpHeaders().set("Content-Type", "application/json");
     let options = { headers: httpHeaders };
     return this.http.put(
-      "http://localhost:3000/contacts/" + id,
+      "https://my-json-server.typicode.com/samadhan111/EH-demo-project/contacts/" + id,
       updatedUserDetails,
       options
     );
   }
   removeContact(id: number): Observable<any> {
-    return this.http.delete("http://localhost:3000/contacts/" + id);
+    return this.http.delete("https://my-json-server.typicode.com/samadhan111/EH-demo-project/contacts/" + id);
   }
 }
